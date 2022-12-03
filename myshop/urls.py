@@ -18,13 +18,21 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 # from cart_app import views
+from accounts_app import views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('cart/',include('cart_app.urls')),
     path('',include('shop_app.urls')),
+
+    
+    
     # path('accounts/',include('accounts_app.urls'))
+    path('register',views.register,name='register'),
+    path('loginuser',views.loginuser,name='loginuser')
+
+    
    
 ]
 

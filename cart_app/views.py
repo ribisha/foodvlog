@@ -40,7 +40,7 @@ def add_cart(request,product_id):
     except items.DoesNotExist:
         c_items=items.objects.create(prodt=prod,quan=1,cart=ct)
         c_items.save()
-        return redirect('cartDetails')        
+    return redirect('cartDetails')        
 
 
 def min_cart(request,product_id):
