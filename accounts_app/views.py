@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib import messages
+from django.contrib.auth import logout
 
 
 # from shop_app.models import *
@@ -50,4 +51,11 @@ def loginuser(request):
             return redirect('loginuser')
     else:
         return render(request,'login.html')
+
+def logout_user(request):
+    if request.method=="POST":
+        logout(request)
+        messages.info(request,"Loggedout successfully")
+        return redirect('/')
+    return render(request,'logout.html')
           

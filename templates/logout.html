@@ -1,0 +1,68 @@
+
+
+<html>
+    <head>
+        <style>
+            *{
+    box-sizing: border-box;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+
+}
+.submit-btn{
+    background-color: #b3281e;
+    border: none;
+    width: 600;
+    padding: 1rem;
+    margin-top: 1rem;
+    color: white;
+    cursor: pointer;
+
+
+}
+
+.submit-btn:hover{
+    background-color: slategray;
+}
+.btn-primary{
+    background-color: blue;
+    border: none;
+    width: 600;
+    padding: 1rem;
+    margin-top: 1rem;
+    color: white;
+    cursor: pointer;
+ 
+
+}
+
+.btn-primary:hover{
+    background-color: slategray;
+}
+        </style>
+    </head>
+    
+{% if request.user.is_authenticated %}
+
+<form method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+   <br><br>
+    <p>Are you sure... You want to logout?</p>
+   
+    <input type="submit" class="btn submit-btn" value="Logout"><br>
+    <!-- <input type="submit" class="btn-primary" value="Back to home"> -->
+    <a href="/" class="btn-primary">Back to home</a>
+</form>
+
+<a href="/" class="btn-primary">Back to home</a>
+</body>
+</html>
+{% endif %}

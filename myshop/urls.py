@@ -30,7 +30,8 @@ urlpatterns = [
     
     # path('accounts/',include('accounts_app.urls'))
     path('register',views.register,name='register'),
-    path('loginuser',views.loginuser,name='loginuser')
+    path('loginuser',views.loginuser,name='loginuser'),
+    path('logout',views.logout_user,name='logout')
 
     
    

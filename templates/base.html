@@ -140,8 +140,18 @@
         <a href="{% url 'cartDetails' %}"><i class="fa fa-shopping-cart"
             style="font-size:14px; color: red;"></i>&nbsp;{{itc}}</a>
         <a href="{% url 'register' %}">Register</a>
-        <a href="{% url 'loginuser' %}">Login</a>
-        <a href="#">Logout</a>
+
+        {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}">logout</a>
+        {% else %}
+        <a href="{% url 'loginuser' %}">login</a>
+        {% endif %}
+
+
+
+
+        <!-- <a href="{% url 'loginuser' %}">Login</a>
+        <a href="#">Logout</a> -->
         <!-- <div class="dropdown">
           <li class="nav-item"> <a class="nav-link" href="#" data-scroll-nav="4"
               style="color: white; background-color: red">Filter</a> </li>
