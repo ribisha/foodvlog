@@ -10,6 +10,5 @@ class register(models.Model):
     mail=models.CharField(max_length=250,unique=True)
     # password=models.CharField(max_length=10,unique=True)
 
-    # def __str__(self):
-    #     return self.username      
+      
 
